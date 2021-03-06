@@ -10,6 +10,7 @@ namespace almacen.controlador
 {
     class conexion2
     {
+        //xd
         String connectionString = "datasource=127.0.0.1;port=3306;username=root;password=;database=almacen;";
         public MySqlConnection conn = new MySqlConnection();
         public MySqlConnection conectar()
