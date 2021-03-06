@@ -30,7 +30,7 @@ class tipoartDAO : Ientidad<tipoart>
             return ban;*/
 
     }
-    string dx = "xd";
+   
 
     public bool agregar(tipoart obj)
     {
