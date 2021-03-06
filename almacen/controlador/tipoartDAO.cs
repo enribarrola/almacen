@@ -1,45 +1,69 @@
 
 
+using almacen.controlador;
 using MySqlConnector;
+using System.Windows.Forms;
 
 class tipoartDAO : Ientidad<tipoart>
 {
     conexion2 conn = new conexion2();
-
+    MySqlCommand stm = null;
     public bool actualizar(tipoart obj)
-    {
-         MySqlCommand stm = null;
-
-        /*    
-            
+    {                            
             bool ban = false;
             try
             {
-
-
-                stm = new ("UPDATE ndigital.articulo	SET idcategoria="+obj.idcategoria+", nombre='" + obj.nombre+"' WHERE idarticulo="+obj.idarticulo+";", conn.conectarPosgresSQL());
+                stm = new MySqlCommand("UPDATE `tipo_articulo` SET `categoria_articulo`= '"+obj.Cat_art+ "' WHERE id_tipo_articulo = " + obj.Idtipoart+"", conn.conectar());
 
                 stm.ExecuteNonQuery();
-                conn.conectarPosgresSQL().Close();
+                conn.conectar().Close();
                 ban = true;
             }
-            catch (NpgsqlException err)
+            catch (System.Exception e)
             {
-                MessageBox.Show("" + err);
+                MessageBox.Show(e.Message);
             }
-            return ban;*/
+            return ban;
 
     }
    
 
     public bool agregar(tipoart obj)
     {
-        throw new System.NotImplementedException();
+        bool ban = false;
+        try
+        {
+            stm = new MySqlCommand("INSERT INTO `tipo_articulo`(`categoria_articulo`) VALUES ('" + obj.Cat_art + "')", conn.conectar());
+
+            stm.ExecuteNonQuery();
+            conn.conectar().Close();
+            ban = true;
+            
+        }
+        catch (System.Exception e)
+        {
+            MessageBox.Show(e.Message);
+        }
+        return ban;
     }
 
-    public bool eliminar(tipoart cod)
+    public bool eliminar(tipoart obj)
     {
-        throw new System.NotImplementedException();
+        bool ban = false;
+        try
+        {
+            stm = new MySqlCommand("DELETE FROM `tipo_articulo` WHERE id_tipo_articulo = "+obj.Idtipoart+";", conn.conectar());
+
+            stm.ExecuteNonQuery();
+            conn.conectar().Close();
+            ban = true;
+        }
+        catch (System.Exception e)
+        {
+            MessageBox.Show(e.Message);
+        }
+        return ban;
+        
     }
 
    

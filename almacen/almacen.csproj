@@ -66,7 +66,17 @@
     <Compile Include="controlador\tipoartDAO.cs" />
     <Compile Include="controlador\tipoartlog.cs" />
     <Compile Include="modelo\articulo.cs" />
+    <Compile Include="modelo\cierre_de_caja.cs" />
+    <Compile Include="modelo\cliente.cs" />
+    <Compile Include="modelo\compras.cs" />
+    <Compile Include="modelo\compras_b_articulos.cs" />
+    <Compile Include="modelo\factura.cs" />
+    <Compile Include="modelo\proveedor.cs" />
+    <Compile Include="modelo\timbrado.cs" />
     <Compile Include="modelo\tipoart.cs" />
+    <Compile Include="modelo\usuario.cs" />
+    <Compile Include="modelo\venta.cs" />
+    <Compile Include="modelo\venta_detalle.cs" />
     <Compile Include="vistas\main.cs">
       <SubType>Form</SubType>
     </Compile>

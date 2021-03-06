@@ -27,14 +27,14 @@ namespace almacen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            conexion2 obj  =  new conexion2();
-            obj.conectar();
+             tipoartlog obj  =  new tipoartlog();
+             obj.agregar("gaseosas");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            conexion2 obj = new conexion2();
-            obj.desconectar();
+            tipoartlog obj = new tipoartlog();
+            obj.eliminar(1);
         }
     }
 }

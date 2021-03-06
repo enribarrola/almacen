@@ -17,8 +17,7 @@ namespace almacen.controlador
             try
             {   //caambiaar
                 conn = new MySqlConnection(connectionString);
-                conn.Open();
-                MessageBox.Show("conectado");
+                conn.Open();                
             }
             catch (Exception e)
             {   //quitar
